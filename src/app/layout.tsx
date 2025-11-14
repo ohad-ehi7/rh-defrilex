@@ -13,16 +13,29 @@ export const metadata: Metadata = {
   description: "Connecting top interpreter talent with global opportunities on demand",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+//   return (
+//     <html lang="en">
+//       <body className={`${inter.className} antialiased`}>
+//         {children}
+//       </body>
+//     </html>
+//   );
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body 
+        className={`${inter.className} antialiased`}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
   );
 }
+

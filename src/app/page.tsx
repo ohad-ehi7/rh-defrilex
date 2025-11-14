@@ -91,7 +91,7 @@ export default function Home() {
                 <div className="relative w-full max-w-lg">
                   <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-blue-100 to-purple-200 rounded-2xl overflow-hidden shadow-xl">
                     <Image
-                      src="/hero-image.jpg"
+                      src="/home.png"
                       alt="Global interpreter network"
                       fill
                       className="object-cover"
