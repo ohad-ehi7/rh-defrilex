@@ -26,10 +26,6 @@ export default function Jobs() {
               <span className="text-white/60">›</span>
               <span className="text-white font-semibold">Freelance Job</span>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Freelance Job
-            </h1>
           </div>
         </div>
       </div>

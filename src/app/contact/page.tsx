@@ -1,6 +1,8 @@
 // src/app/contact/page.tsx
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Link from "next/link";
+
 
 export default function Contact() {
   return (
@@ -11,12 +13,11 @@ export default function Contact() {
       <div className="bg-[#001454] pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Contact Us
-            </h1>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Get in touch with our team - we're here to help you
-            </p>
+            <div className="flex justify-center items-center space-x-2 text-white/80 mb-4">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <span className="text-white/60">›</span>
+              <span className="text-white font-semibold">Contact</span>
+            </div>
           </div>
         </div>
       </div>

@@ -71,13 +71,8 @@ export default function Blog() {
               <span className="text-white font-semibold">Blogs</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Blogs
-            </h1>
             
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Discover the latest insights, tips, and trends in freelance work and digital services.
-            </p>
+           
           </div>
         </div>
       </div>
