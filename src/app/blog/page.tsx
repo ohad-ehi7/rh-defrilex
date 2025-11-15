@@ -71,8 +71,13 @@ export default function Blog() {
               <span className="text-white font-semibold">Blogs</span>
             </div>
             
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              Blogs
+            </h1>
             
-           
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+              Discover the latest insights, tips, and trends in freelance work and digital services.
+            </p>
           </div>
         </div>
       </div>
@@ -86,55 +91,69 @@ export default function Blog() {
                 key={post.id}
                 className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group"
               >
-                <div className="relative h-48 w-full overflow-hidden">
+                {/* Container d'image avec texte superposé */}
+                <div className="relative h-80 w-full overflow-hidden">
+                  {/* Image de fond */}
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[#0027A8] text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center text-gray-500 text-sm mb-3">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    {post.date}
-                  </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#0027A8] transition-colors">
-                    {post.title}
-                  </h3>
+                  {/* Overlay sombre pour meilleure lisibilité */}
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
                   
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  
-                  <Link 
-                    href={`/blog/${post.id}`}
-                    className="inline-flex items-center text-[#0027A8] font-semibold hover:text-[#001454] transition-colors group/readmore"
-                  >
-                    Read More
-                    <svg 
-                      className="w-4 h-4 ml-2 transform group-hover/readmore:translate-x-1 transition-transform" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
+                  {/* Contenu texte superposé sur l'image */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    
+                    {/* Catégorie */}
+                    <div className="mb-3">
+                      <span className="bg-[#0027A8] text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        {post.category}
+                      </span>
+                    </div>
+                    
+                    {/* Date */}
+                    <div className="flex items-center text-white/90 text-sm mb-3">
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      {post.date}
+                    </div>
+                    
+                    {/* Titre */}
+                    <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-[#60a5fa] transition-colors">
+                      {post.title}
+                    </h3>
+                    
+                    {/* Extrait */}
+                    <p className="text-white/90 mb-4 line-clamp-2 text-sm">
+                      {post.excerpt}
+                    </p>
+                    
+                    {/* Lien Read More */}
+                    <Link 
+                      href={`/blog/${post.id}`}
+                      className="inline-flex items-center text-white font-semibold hover:text-[#60a5fa] transition-colors group/readmore"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
+                      Read More
+                      <svg 
+                        className="w-4 h-4 ml-2 transform group-hover/readmore:translate-x-1 transition-transform" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
           
+          {/* Bouton Load More */}
           <div className="text-center mt-12">
             <button className="bg-[#0027A8] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#001454] transition-colors duration-200 shadow-sm">
               Load More Articles
