@@ -18,7 +18,7 @@ export default function Home() {
               <div className="text-left">
                 {/* Titre principal avec texte blanc */}
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                  Connecting Top Interpreter Talent with Global Opportunities—<span className="text-[#60a5fa]">On Demand</span>.
+                  Connecting Top Interpreter Talent with Global Opportunities—<span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-[#6a87ff]">On Demand</span>.
                 </h1>
                 
                 {/* Barre de recherche complète */}
@@ -87,19 +87,57 @@ export default function Home() {
               </div>
 
               {/* Right Column - Image */}
-              <div className="flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-lg">
-                  <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-blue-100 to-purple-200 rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src="/home.png"
-                      alt="Global interpreter network"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                </div>
-              </div>
+{/* Right Column - Image */}
+<div className="flex justify-center lg:justify-end">
+  <div className="relative w-full max-w-lg">
+
+    {/* Background Shape (green) */}
+    <Image
+      src="/image7.png"
+      alt="Green background shape"
+      width={900}
+      height={900}
+      className="
+        absolute 
+        -top-10
+        -left-20     /* Déplacé à gauche */
+        w-[480px]    /* Légèrement plus petit */
+        opacity-80
+        mix-blend-screen
+        pointer-events-none
+        select-none
+      "
+    />
+
+    {/* Blue Circle with Man Image */}
+    <div
+      className="
+        relative
+        w-full
+        aspect-square
+        bg-[#0028A8]
+        rounded-full
+        shadow-2xl
+        border
+        border-blue-800
+        overflow-visible   /* Permet à l'image de sortir du cercle */
+      "
+    >
+      <Image
+        src="/home.png"
+        alt="Global interpreter network"
+        fill
+        className="
+          object-cover
+          translate-y-13
+          
+        "
+        priority
+      />
+    </div>
+  </div>
+</div>
+
             </div>
           </div>
         </main>
@@ -194,35 +232,57 @@ export default function Home() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
       
       {/* Interpreter CTA - GRAY CARD */}
-      <div className="bg-gray-100 p-10 rounded-xl shadow-md border border-gray-200 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-          I’m looking for interpretation work
-        </h3>
-        <p className="text-gray-700 mb-6">
-          Join our global network of professional interpreters. Connect with companies worldwide and get hired for projects that match your expertise.
-        </p>
-        <button className="bg-[#001454] text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition duration-200">
-          Create Interpreter Account
-        </button>
-      </div>
+      <div className="bg-[#515250] p-10 rounded-xl shadow-md border border-gray-200 flex items-center">
+ 
+  <div className="flex-1 text-left">
+    <h3 className="text-2xl font-bold text-[#FFFF] mb-4">
+      I’m looking for interpretation <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-[#6a87ff]">Work</span>
+    </h3>
+    <p className="text-[#FFFF] mb-6">
+      Join our global network of professional interpreters. Connect with companies worldwide and get hired for projects that match your expertise.
+    </p>
+    <button className="bg-[#0a36ff] text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition duration-200">
+      Create Interpreter Account
+    </button>
+  </div>
+  <img
+    src="/image3.png"
+    alt="Interpreter Illustration"
+    className="w-40 h-40 object-cover ml-8"
+  />
+</div>
 
       {/* Client CTA - BLUE CARD */}
-      <div className="bg-[#001454] p-10 rounded-xl shadow-md border border-gray-200 text-center text-white">
-        <h3 className="text-2xl font-bold mb-4">
-          I need interpreters for my project
-        </h3>
-        <p className="text-gray-200 mb-6">
-          Access thousands of professional interpreters on-demand. Manage all your language service needs in one place.
-        </p>
-        <button className="bg-white text-[#001454] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition duration-200">
-          Create Client Account
-        </button>
-      </div>
+      <div className="bg-[#001454] p-10 rounded-xl shadow-md border border-gray-200 flex items-center text-white">
+  {/* Texte à gauche */}
+  <div className="flex-1">
+    <h3 className="text-2xl font-bold mb-4">
+      I need interpreters for my{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-[#6a87ff]">
+        project
+      </span>
+    </h3>
+
+    <p className="text-gray-200 mb-6">
+      Access thousands of professional interpreters on-demand. Manage all your language service needs in one place.
+    </p>
+
+    <button className="bg-[#0a36ff] px-8 py-4 rounded-lg font-semibold hover:bg-[#0a36ff] transition duration-200">
+      Create Client Account
+    </button>
+  </div>
+
+  
+  <img
+    src="/image2.png"
+    alt="Client Illustration"
+    className="w-40 h-50 object-contain ml-10"
+  />
+</div>
 
     </div>
   </div>
 </div>
-
 
       {/* Smarter Way Section */}
       <div className="bg-white py-16">
